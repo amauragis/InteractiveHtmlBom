@@ -460,7 +460,7 @@ class Config:
                                                   fallback=args.show_fabrication)
         self.show_silkscreen = config.getboolean('html_defaults', 'show_silkscreen',
                                                  fallback=not args.hide_silkscreen)
-        self.highlight_pin1 = config.getboolean('html_defaults', 'highlight_pin1',
+        self.highlight_pin1 = config.get('html_defaults', 'highlight_pin1',
                                          fallback=args.highlight_pin1)
         self.redraw_on_drag = config.getboolean('html_defaults',
                                                 'redraw_on_drag',
