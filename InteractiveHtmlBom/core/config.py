@@ -475,12 +475,15 @@ class Config:
                                      fallback=args.layer_view)
         self.compression = config.getboolean('html_defaults', 'compression',
                                       fallback=not args.no_compression)
-        self.open_browser = config.getboolean('html_defaults', 'open_browser',
-                                           fallback = not args.no_browser)
+        # self.open_browser = config.getboolean('html_defaults', 'open_browser',
+        #                                    fallback = not args.no_browser)
+
+        self.open_browser = not args.no_browser
 
         # General
-        self.bom_dest_dir = config.get('general', 'bom_dest_dir',
-                                       fallback=args.dest_dir)
+        # self.bom_dest_dir = config.get('general', 'bom_dest_dir',
+        #                                fallback=args.dest_dir)
+        self.bom_dest_dir= args.dest_dir
         self.bom_name_format = config.get('general', 'bom_name_format',
                                           fallback=args.name_format)
         self.component_sort_order = self._split(
